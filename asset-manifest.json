@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/tq-client-web/static/js/main.bd32ba4b.js",
+    "index.html": "/tq-client-web/index.html",
+    "main.bd32ba4b.js.map": "/tq-client-web/static/js/main.bd32ba4b.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.bd32ba4b.js"
+  ]
+}
