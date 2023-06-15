@@ -2,8 +2,11 @@
 
 import ForgotPassword from "../components/login/ForgotPassword";
 import Login from "../components/login/Login";
+import { useContext } from "react";
 
 export default function LoginPage({ type = "login" }) {
+
+
 	return (
 		<>
 			<p>Murat</p>
