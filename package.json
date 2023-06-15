@@ -1,7 +1,7 @@
 {
   "name": "tq.web",
   "version": "0.1.0",
-  "homepage": "https://muratbeyaztas.github.io/tq-client-web",
+  "homepage": "http://muratbeyaztas.github.io/tq-client-web",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
