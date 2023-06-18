@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../context/AppContext";
 
@@ -10,12 +10,15 @@ export default function Login() {
 
 	const context = useContext(AppState)
 
+	const firms = ["Akpres", "Orgachem", "Organik kimya"];
+	const [firm, setFirm] = useState();
+
 	const onLogin = e => {
 		const uname = unameRef.current.value;
 		const pwd = pwdRef.current.value;
 
 		if (uname == "10254065182" && pwd == "test1111") {
-			const user = {username: uname, password: pwd};
+			const user = { username: uname, password: pwd };
 			context.user.set(user);
 			nav('/dashboard')
 		}
