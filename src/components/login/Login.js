@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppState } from "../context/AppContext";
 
@@ -9,6 +9,9 @@ export default function Login() {
 	const nav = useNavigate();
 
 	const context = useContext(AppState)
+
+	const firms = ["Akpres", "Orgachem", "Organik kimya"];
+	const [firm, setFirm] = useState();
 
 	const onLogin = e => {
 		const uname = unameRef.current.value;
