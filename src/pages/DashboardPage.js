@@ -6,6 +6,6 @@ export default function DashboardPage() {
 
     const context = useContext(AppState)
     return (<>
-        dashboard - {context.user.get?.username || 'no login'}
+        dashboard page - {context.user.get?.username || 'no login'}
     </>)
 }

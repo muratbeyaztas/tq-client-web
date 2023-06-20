@@ -14,7 +14,7 @@ export default function Login() {
 		const uname = unameRef.current.value;
 		const pwd = pwdRef.current.value;
 
-		if (uname == "10254065182" && pwd == "test1111") {
+		if (uname === "10254065182" && pwd === "test1111") {
 			const user = {username: uname, password: pwd};
 			context.user.set(user);
 			nav('/dashboard')
