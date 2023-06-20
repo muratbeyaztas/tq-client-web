@@ -8,30 +8,33 @@ export default function Login() {
 	const pwdRef = useRef();
 	const nav = useNavigate();
 
-	const context = useContext(AppState)
+	const context = useContext(AppState);
+	const [showFirm, setShowFirm] = useState(false);
+	const [showCode, setShowCode] = useState(false);
 
 	const firms = ["Akpres", "Orgachem", "Organik kimya"];
-	const [firm, setFirm] = useState();
 
-	const onLogin = e => {
+	const onLogin = (e) => {
 		const uname = unameRef.current.value;
 		const pwd = pwdRef.current.value;
 
-		if (uname === "10254065182" && pwd === "test1111") {
-			const user = {username: uname, password: pwd};
-			context.user.set(user);
-			nav('/dashboard')
-		}
-		else
-			console.log("gecersiz kullanici adi veya sifre")
-	}
+		if (uname !== "10254065182" || pwd !== "test1111") return;
+
+		const user = { username: uname, password: pwd };
+		context.user.set(user);
+		setShowFirm(true);
+
+		if (showFirm && showCode) nav("/dashboard");
+	};
 
 	return (
 		<div className="bg-white rounded mx-auto w-[600px] min-h-[300px]">
 			<h1 className="text-center mt-5 font-bold text-xl">Giris</h1>
 			<div className="w-full h-full p-10 flex flex-col justify-center items-center space-y-10">
 				<div className="w-full h-full flex flex-col">
-					<p className="text-sm font-semibold pb-2 text-slate-400">Kullanici adi</p>
+					<p className="text-sm font-semibold pb-2 text-slate-400">
+						Kullanici adi
+					</p>
 					<input
 						className="itext"
 						type="text"
@@ -48,6 +51,35 @@ export default function Login() {
 						ref={pwdRef}
 					/>
 				</div>
+
+				{showFirm && (
+					<div className="w-full h-full flex flex-col">
+						<p className="text-sm font-semibold pb-2 text-slate-400">
+							Giris yapmak istediginiz firmayi seciniz
+						</p>
+						<select
+							name="firm"
+							className="icombo"
+							onChange={(e) => setShowCode(true)}
+						>
+							<option>Seciniz</option>
+							{firms.map((c, key) => (
+								<option key={key} className="p-4 text-md text-slate-500 mt-2">
+									{c}
+								</option>
+							))}
+						</select>
+					</div>
+				)}
+
+				{showCode && (
+					<div className="w-full h-full flex flex-col">
+						<p className="text-sm font-semibold pb-2 text-slate-400">
+							Giris kodu
+						</p>
+						<input type="text" className="itext" placeholder="Giris kodu" />
+					</div>
+				)}
 
 				<div className="w-full flex justify-between items-center">
 					<input

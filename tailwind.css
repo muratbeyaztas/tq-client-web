@@ -2,20 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .box{
-        @apply bg-blue-50 max-w-md flex flex-col items-center rounded-md mx-auto p-10 mt-10 shadow-lg hover:text-slate-500 transition
+@layer components {
+    .box {
+        @apply bg-blue-50 max-w-md flex flex-col items-center rounded-md mx-auto p-10 mt-10 shadow-lg hover: text-slate-500 transition
     }
 
-    .itext{
+    .itext {
         @apply h-10 w-full rounded font-sans text-xl p-6 border-2
     }
-    
-    .btn{
+
+    .icombo {
+        @apply itext p-0 px-4 h-12
+    }
+
+    .btn {
         @apply bg-sky-300 px-5 py-3 font-sans hover:bg-sky-500 hover:text-white
     }
 
-    .abtn{
+    .abtn {
         @apply px-5 py-3 font-sans hover:bg-sky-500 hover:text-slate-50
+    }
+
+    .m-fadeOut {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 300ms;
+    }
+
+    .m-fadeIn {
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0s linear 0s, opacity 300ms;
     }
 }
